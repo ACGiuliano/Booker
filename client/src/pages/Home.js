@@ -79,24 +79,22 @@ function Home() {
 
       {/* Stats Section */}
       <section className="stats">
-        <div className="container">
-          <div className="stats-grid">
-            <div className="stat">
-              <div className="stat-number">10,000+</div>
-              <div className="stat-label">Books Tracked</div>
-            </div>
-            <div className="stat">
-              <div className="stat-number">5,000+</div>
-              <div className="stat-label">Active Readers</div>
-            </div>
-            <div className="stat">
-              <div className="stat-number">25,000+</div>
-              <div className="stat-label">Reviews Written</div>
-            </div>
-            <div className="stat">
-              <div className="stat-number">98%</div>
-              <div className="stat-label">User Satisfaction</div>
-            </div>
+        <div className="stats-grid">
+          <div className="stat">
+            <div className="stat-number">10,000+</div>
+            <div className="stat-label">Books Tracked</div>
+          </div>
+          <div className="stat">
+            <div className="stat-number">5,000+</div>
+            <div className="stat-label">Active Readers</div>
+          </div>
+          <div className="stat">
+            <div className="stat-number">25,000+</div>
+            <div className="stat-label">Reviews Written</div>
+          </div>
+          <div className="stat">
+            <div className="stat-number">98%</div>
+            <div className="stat-label">User Satisfaction</div>
           </div>
         </div>
       </section>

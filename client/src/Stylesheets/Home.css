@@ -252,14 +252,21 @@
 /* Stats Section */
 .stats {
   padding: 60px 0;
-  background: #475569;
+  background: #1e293b;
   color: white;
+  text-align: center;
+  width: 100%;
+  margin: 0;
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  justify-items: center;
 }
 
 .stat {
