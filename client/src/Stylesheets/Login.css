@@ -296,7 +296,7 @@
 }
 
 /* Login Stats */
-.login-stats {
+.login .login-stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
@@ -307,7 +307,7 @@
   border-radius: 0;
 }
 
-.login-stat {
+.login .login-stat {
   background: rgba(255, 255, 255, 0.8);
   padding: 1.5rem;
   border-radius: 12px;
@@ -316,14 +316,14 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.login-stat-number {
+.login .login-stat-number {
   font-size: 1.5rem;
   font-weight: bold;
   color: #2563eb;
   margin-bottom: 0.25rem;
 }
 
-.login-stat-label {
+.login .login-stat-label {
   font-size: 0.9rem;
   color: #64748b;
 }

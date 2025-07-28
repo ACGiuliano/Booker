@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../Stylesheets/Login.css';
 
 function Login() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -54,7 +55,15 @@ function Login() {
         // Simulate API call
         setTimeout(() => {
           setIsLoading(false);
-          alert('Login successful!');
+          // Store user token/session data
+          localStorage.setItem('userToken', 'mock-jwt-token');
+          localStorage.setItem('user', JSON.stringify({
+            firstName: formData.email.split('@')[0],
+            lastName: 'User',
+            email: formData.email
+          }));
+          // Redirect to dashboard
+          navigate('/dashboard');
         }, 1000);
       } catch (err) {
         setIsLoading(false);

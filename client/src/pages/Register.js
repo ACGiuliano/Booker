@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../Stylesheets/Register.css';
 
 function Register() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -12,6 +13,7 @@ function Register() {
   });
 
   const [errors, setErrors] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -65,9 +67,22 @@ function Register() {
     const newErrors = validateForm();
     
     if (Object.keys(newErrors).length === 0) {
+      setIsLoading(true);
       // Form is valid, submit the data
       console.log('Form submitted:', formData);
-      // API call to register the user can be added here
+      // Simulate API call
+      setTimeout(() => {
+        setIsLoading(false);
+        // Store user token/session data
+        localStorage.setItem('userToken', 'mock-jwt-token');
+        localStorage.setItem('user', JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email
+        }));
+        // Redirect to dashboard
+        navigate('/dashboard');
+      }, 1000);
     } else {
       setErrors(newErrors);
     }
@@ -109,6 +124,7 @@ function Register() {
                       onChange={handleChange}
                       className={errors.firstName ? 'error' : ''}
                       placeholder="Enter your first name"
+                      disabled={isLoading}
                     />
                     {errors.firstName && <span className="error-message">{errors.firstName}</span>}
                   </div>
@@ -123,6 +139,7 @@ function Register() {
                       onChange={handleChange}
                       className={errors.lastName ? 'error' : ''}
                       placeholder="Enter your last name"
+                      disabled={isLoading}
                     />
                     {errors.lastName && <span className="error-message">{errors.lastName}</span>}
                   </div>
@@ -138,6 +155,7 @@ function Register() {
                     onChange={handleChange}
                     className={errors.email ? 'error' : ''}
                     placeholder="Enter your email address"
+                    disabled={isLoading}
                   />
                   {errors.email && <span className="error-message">{errors.email}</span>}
                 </div>
@@ -152,6 +170,7 @@ function Register() {
                     onChange={handleChange}
                     className={errors.password ? 'error' : ''}
                     placeholder="Create a password (min. 6 characters)"
+                    disabled={isLoading}
                   />
                   {errors.password && <span className="error-message">{errors.password}</span>}
                 </div>
@@ -166,12 +185,17 @@ function Register() {
                     onChange={handleChange}
                     className={errors.confirmPassword ? 'error' : ''}
                     placeholder="Confirm your password"
+                    disabled={isLoading}
                   />
                   {errors.confirmPassword && <span className="error-message">{errors.confirmPassword}</span>}
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-full">
-                  Create Account
+                <button 
+                  type="submit" 
+                  className={`btn btn-primary btn-full ${isLoading ? 'loading' : ''}`}
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Creating Account...' : 'Create Account'}
                 </button>
 
                 <div className="form-footer">
