@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
+import MyBooks from './pages/MyBooks';
 import PlaceholderPage from './pages/PlaceholderPage';
 
 function App() {
@@ -14,12 +15,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/my-books" element={
-          <PlaceholderPage 
-            title="My Books" 
-            description="This is where you'll manage your personal book library. Add books, update reading progress, and organize your collection." 
-          />
-        } />
+        <Route path="/my-books" element={<MyBooks />} />
         <Route path="/discover" element={
           <PlaceholderPage 
             title="Discover Books" 

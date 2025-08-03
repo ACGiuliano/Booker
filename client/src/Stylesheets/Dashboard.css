@@ -337,19 +337,23 @@
 .goal-header h3 {
   margin: 0 0 0.5rem 0;
   font-size: 1.25rem;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .goal-header p {
   margin: 0 0 1.5rem 0;
-  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .progress-bar {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 10px;
   height: 10px;
   overflow: hidden;
   margin-bottom: 1rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .progress-bar.small {
@@ -358,10 +362,11 @@
 }
 
 .progress-fill {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   height: 100%;
   border-radius: 10px;
   transition: width 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .goal-footer {
@@ -369,7 +374,13 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.875rem;
-  opacity: 0.9;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.goal-footer .progress-text {
+  color: white;
 }
 
 /* Recent Books Section */
