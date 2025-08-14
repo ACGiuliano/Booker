@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import MyBooks from './pages/MyBooks';
+import AddBook from './pages/AddBook';
 import PlaceholderPage from './pages/PlaceholderPage';
 
 function App() {
@@ -40,12 +41,7 @@ function App() {
             description="Customize your Booker experience with notification settings, display preferences, and more." 
           />
         } />
-        <Route path="/add-book" element={
-          <PlaceholderPage 
-            title="Add Book" 
-            description="Add a new book to your library. Search our database or manually enter book information." 
-          />
-        } />
+        <Route path="/add-book" element={<AddBook />} />
         <Route path="/insights" element={
           <PlaceholderPage 
             title="Reading Insights" 
