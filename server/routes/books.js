@@ -2,8 +2,39 @@ const express = require('express');
 const router = express.Router();
 const { db, searchBooks } = require('../db');
 const { authenticateToken } = require('./auth');
+const openLibraryService = require('../services/openLibraryService');
 
-// Search books
+// Search books in Open Library
+router.get('/search/openlibrary', async (req, res) => {
+  try {
+    const query = req.query.q;
+    const limit = parseInt(req.query.limit) || 10;
+    
+    if (!query || query.trim().length < 2) {
+      return res.status(400).json({ error: 'Search query must be at least 2 characters long' });
+    }
+    
+    const books = await openLibraryService.searchBooks(query.trim(), limit);
+    res.json(books);
+  } catch (err) {
+    console.error('Open Library search error:', err);
+    res.status(500).json({ error: 'Failed to search books from Open Library' });
+  }
+});
+
+// Get book details from Open Library
+router.get('/openlibrary/:key(*)', async (req, res) => {
+  try {
+    const key = '/' + req.params.key; // Reconstruct the full key path
+    const bookDetails = await openLibraryService.getBookDetails(key);
+    res.json(bookDetails);
+  } catch (err) {
+    console.error('Open Library book details error:', err);
+    res.status(500).json({ error: 'Failed to get book details from Open Library' });
+  }
+});
+
+// Search books in local database
 router.get('/search', (req, res) => {
   try {
     const query = req.query.q;
