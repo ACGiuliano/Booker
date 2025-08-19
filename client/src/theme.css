@@ -1,0 +1,14 @@
+/* Global theme variables */
+:root {
+  --color-primary: #2563eb;        /* brand blue */
+  --color-primary-dark: #1d4ed8;   /* brand blue (hover) */
+  --color-slate: #1e293b;          /* slate (progress bar color) */
+  --color-muted: #64748b;          /* muted text */
+  --color-bg: #f8fafc;             /* app background */
+  --color-surface: #ffffff;        /* cards & panels */
+}
+
+/* Utility helpers (optional) */
+.text-slate { color: var(--color-slate) !important; }
+.bg-slate { background: var(--color-slate) !important; color: #fff !important; }
+.border-slate { border-color: var(--color-slate) !important; }

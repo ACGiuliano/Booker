@@ -2,10 +2,10 @@
 .register {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   min-height: 100vh;
-  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  background: #f8fafc;
 }
 
-.container {
+.register .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -81,7 +81,7 @@
 
 .form-header h2 {
   font-size: 2rem;
-  color: #1e293b;
+  color: var(--color-slate);
   margin-bottom: 0.5rem;
 }
 

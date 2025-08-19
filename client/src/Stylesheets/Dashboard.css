@@ -6,7 +6,7 @@
   color: #333;
 }
 
-.container {
+.dashboard .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -33,7 +33,7 @@
 }
 
 .logo h1 {
-  color: #2563eb;
+  color: var(--color-primary);
   font-size: 1.8rem;
   font-weight: bold;
 }
@@ -224,8 +224,8 @@
 
 .btn-outline:hover {
   background: #f1f5f9;
-  color: #2563eb;
-  border-color: #2563eb;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .btn-icon {
@@ -240,6 +240,11 @@
 
 .btn-icon:hover {
   background: #f1f5f9;
+}
+
+/* Use slate for key headings */
+.section-title {
+  color: var(--color-slate);
 }
 
 /* Section Titles */
@@ -328,7 +333,7 @@
 }
 
 .goal-card {
-  background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+  background: #2563eb;
   color: white;
   padding: 2rem;
   border-radius: 12px;
@@ -361,8 +366,10 @@
   margin-bottom: 0.5rem;
 }
 
-.progress-fill {
-  background: rgba(255, 255, 255, 0.95);
+/* Progress bar styling - updated
+   Note: Scoped to .goal-card to avoid being overridden by generic rules in other pages (e.g., MyBooks.css) */
+.goal-card .progress-fill {
+  background: var(--color-slate); /* dark slate to contrast with the blue card */
   height: 100%;
   border-radius: 10px;
   transition: width 0.3s ease;
@@ -612,3 +619,6 @@
     width: 180px;
   }
 }
+
+/* Import theme variables */
+@import url('../theme.css');

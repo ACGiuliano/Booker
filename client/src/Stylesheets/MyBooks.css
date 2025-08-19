@@ -6,7 +6,7 @@
   color: #333;
 }
 
-.container {
+.my-books .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -44,7 +44,7 @@
   gap: 2rem;
 }
 
-.nav-link {
+.my-books .nav-link {
   text-decoration: none;
   color: #64748b;
   font-weight: 500;
@@ -53,8 +53,8 @@
   transition: all 0.3s ease;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.my-books .nav-link:hover,
+.my-books .nav-link.active {
   color: #2563eb;
   background: #eff6ff;
 }
@@ -182,7 +182,7 @@
 }
 
 /* Buttons */
-.btn {
+.my-books .btn {
   text-decoration: none;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
@@ -197,12 +197,12 @@
   font-family: inherit;
 }
 
-.btn-primary {
+.my-books .btn-primary {
   background: #2563eb;
   color: white;
 }
 
-.btn-primary:hover {
+.my-books .btn-primary:hover {
   background: #1d4ed8;
   transform: translateY(-2px);
 }
@@ -215,13 +215,13 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
 
-.stats-grid {
+.my-books .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1.5rem;
 }
 
-.stat-card {
+.my-books .stat-card {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -231,27 +231,27 @@
   transition: transform 0.3s ease;
 }
 
-.stat-card:hover {
+.my-books .stat-card:hover {
   transform: translateY(-2px);
 }
 
-.stat-icon {
+.my-books .stat-icon {
   font-size: 2rem;
   flex-shrink: 0;
 }
 
-.stat-content {
+.my-books .stat-content {
   flex: 1;
 }
 
-.stat-number {
+.my-books .stat-number {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #1e293b;
+  color: var(--color-slate);
   margin: 0;
 }
 
-.stat-label {
+.my-books .stat-label {
   font-size: 0.875rem;
   color: #64748b;
   margin: 0;
@@ -495,7 +495,7 @@
 .book-title {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #1e293b;
+  color: var(--color-slate);
   margin: 0 0 0.25rem 0;
   line-height: 1.3;
 }
@@ -606,7 +606,7 @@
 
 .progress-indicator {
   font-size: 0.8rem;
-  color: #2563eb;
+  color: var(--color-slate);
   font-weight: 600;
 }
 
@@ -697,6 +697,9 @@
   background: #e2e8f0;
   transform: scale(1.1);
 }
+
+/* Import theme variables */
+@import url('../theme.css');
 
 /* Responsive Design */
 @media (max-width: 968px) {
